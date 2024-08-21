@@ -1,0 +1,46 @@
+#header {
+    display: flex;
+    width: 100%;
+    height: 100px;
+    background-color: black;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    align-items: center;
+    border: 3px solid black;
+  }
+  
+  #body {
+    display: flex;
+    height: 400px;
+  }
+  
+  #Nav {
+    background-color: black;
+    width: 5%;
+    color: white;
+  }
+  
+  #Views {
+    width: 95%;
+    margin-left: 15%;
+  }
+  
+  button {
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    border: 2px solid white;
+    margin: 10px;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  #footer {
+    font-family: 'Courier New', Courier, monospace;
+    width: 100%;
+    border: 3px solid black;
+    background-color: black;
+    color: white;
+    text-align: end;
+    font-weight: 600;
+    font-size: 20px;
+  }
