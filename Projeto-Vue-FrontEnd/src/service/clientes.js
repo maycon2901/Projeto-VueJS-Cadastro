@@ -1,4 +1,3 @@
-import { Teleport } from 'vue'
 import api from './api'
 
 export default {
@@ -8,5 +7,8 @@ export default {
     },
     Salvar: (nome, telefone, idade, email) => {
         return api.post('cadastros', nome, telefone, idade, email)
+    },
+    Excluir: (id) => {
+        return api.delete(`cadastro/${id}`)
     }
 }

@@ -1,26 +1,35 @@
 <script>
 
-import Clientes from '../service/clientes';
+import clientes from '../service/clientes';
 
 export default {
 
     data() {
         return {
-            Users: []
+            Users: [],
+            id: ''
         }
     },
 
     mounted() {
 
-        Clientes.Listar()
+        clientes.Listar()
             .then(resposta => {
                 this.Users = resposta.data
             })
             .catch(error => {
                 console.error(error);
-            });
+            })
+    },
+
+    methods: {
+        Excluir() {
+            clientes.Excluir(this.id)
+            alert('Cliente Excluido!!')
+        }
     }
 }
+
 </script>
 
 <template>
@@ -73,7 +82,12 @@ export default {
 
         </div>
     </div>
+    <input type="text" placeholder="ID Cliente" v-model="id">
+    {{ id }}
+    <button id="excluir" @click="Excluir">Excluir</button>
+
 </template>
+
 
 <style>
 #table {
@@ -87,5 +101,11 @@ td,
 th {
     padding: 10px;
     text-align: left;
+}
+
+#excluir {
+    color: rgb(250, 244, 244);
+    background-color: black;
+    border-radius: 5px;
 }
 </style>
